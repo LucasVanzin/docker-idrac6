@@ -52,7 +52,7 @@ touch cookies
 
 IDRAC_VERSION=5
 echo "iDRAC version 5 detected"
-COOKIE=$(curl -k --data "WEBVAR_USERNAME=${IDRAC_USER}&WEBVAR_PASSWORD=${IDRAC_PASSWORD}" https://${IDRAC_HOST}/rpc/WEBSES/create.asp 2> /dev/null | grep SESSION_COOKIE | cut -d\' -f 4)
+COOKIE=$(curl -k --data "WEBVAR_USERNAME=${IDRAC_USER}&WEBVAR_PASSWORD=${IDRAC_PASSWORD}" https://${IDRAC_HOST}/Applications/dellUI/RPC/WEBSES/create.asp 2> /dev/null | grep SESSION_COOKIE | cut -d\' -f 4)
 echo "Cookie=SessionCookie=${COOKIE}" > cookies
 
 echo "Downloading required files"
